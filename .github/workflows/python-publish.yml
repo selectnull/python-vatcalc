@@ -28,11 +28,23 @@ jobs:
       - name: Run tests
         run: uv run pytest tests
 
-      - name: Install build
-        run: uv pip install build
-
+      - name: Debug directory contents
+        run: |
+          pwd
+          ls -la
+          cat pyproject.toml
+        
+      - name: Install build package
+        run: |
+          uv pip install --system build
+          python -m pip list
+        
       - name: Build package
-        run: python -m build
-
+        run: |
+          which python
+          python -m build --sdist --wheel .
+        
+      - name: List dist contents
+        run: ls -la dist/
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
