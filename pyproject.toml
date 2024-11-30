@@ -8,6 +8,12 @@ authors = [
 ]
 requires-python = ">=3.9"
 dependencies = []
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Office/Business :: Financial",
+    "License :: OSI Approved :: MIT License"
+]
 
 [build-system]
 requires = ["hatchling"]
@@ -16,11 +22,4 @@ build-backend = "hatchling.build"
 [dependency-groups]
 dev = [
     "pytest>=8.3.3",
-]
-
-classifiers = [
-    "Development Status :: 5 - Production/Stable",
-    "Programming Language :: Python :: 3.9",
-    "Topic :: Office/Business :: Financial",
-    "License :: OSI Approved :: MIT License"
 ]
